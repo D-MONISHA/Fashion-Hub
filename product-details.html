@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Fashion Hub</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-crown"></i> Fashion Hub
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="products.html?category=men">Men</a></li>
+              <li><a class="dropdown-item" href="products.html?category=women">Women</a></li>
+              <li><a class="dropdown-item" href="products.html?category=kids">Kids</a></li>
+              <li><a class="dropdown-item" href="products.html?category=accessories">Accessories</a></li>
+              <li><a class="dropdown-item" href="products.html?category=footwear">Footwear</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+        
+        <form class="search-bar ms-3 me-3 search-form" style="display: flex; gap: 0.5rem;">
+          <input class="form-control" type="text" placeholder="Search products..." aria-label="Search" required>
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        
+        <div class="navbar-icons">
+          <div class="nav-icon wishlist-icon" title="Wishlist">
+            <i class="far fa-heart"></i>
+          </div>
+          <div class="nav-icon cart-icon" title="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge hidden">0</span>
+          </div>
+        </div>
+        
+        <button class="btn btn-login ms-2">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== BREADCRUMB ========== -->
+  <div style="background-color: #f8f9fa; padding: 1.5rem 0; border-bottom: 1px solid #e0e0e0;">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Shop</a></li>
+          <li class="breadcrumb-item active" id="breadcrumb-product">Product</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ========== PRODUCT DETAILS ========== -->
+  <section class="product-details-section">
+    <div class="container">
+      <div class="row">
+        <!-- Product Gallery -->
+        <div class="col-lg-5">
+          <div class="product-gallery" id="product-gallery">
+            <!-- Gallery will be rendered here -->
+          </div>
+        </div>
+
+        <!-- Product Information -->
+        <div class="col-lg-7">
+          <div class="product-info">
+            <div id="product-content">
+              <!-- Product details will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Tabs -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="product-info-tabs">
+            <div class="tabs-nav">
+              <button class="tab-button active" data-tab="description">Description</button>
+              <button class="tab-button" data-tab="shipping">Shipping Info</button>
+              <button class="tab-button" data-tab="returns">Returns</button>
+            </div>
+
+            <div id="description" class="tab-content active">
+              <h4>Product Description</h4>
+              <p id="tab-description"></p>
+            </div>
+
+            <div id="shipping" class="tab-content">
+              <h4>Shipping Information</h4>
+              <ul>
+                <li><strong>Standard Shipping:</strong> 5-7 business days</li>
+                <li><strong>Express Shipping:</strong> 2-3 business days</li>
+                <li><strong>Overnight Shipping:</strong> Next business day</li>
+                <li><strong>Free Shipping:</strong> On orders over $100</li>
+              </ul>
+              <p>All items are carefully packaged and insured for transit.</p>
+            </div>
+
+            <div id="returns" class="tab-content">
+              <h4>Return Policy</h4>
+              <ul>
+                <li><strong>30-Day Returns:</strong> Return items within 30 days for a full refund</li>
+                <li><strong>Condition:</strong> Items must be unworn and in original packaging</li>
+                <li><strong>Return Shipping:</strong> Free return shipping on all orders</li>
+                <li><strong>Refund Processing:</strong> Refunds processed within 5-10 business days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="section-title">
+            <h2>You Might Also Like</h2>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="products-grid" id="related-products">
+            <!-- Related products will be rendered here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">
+            <i class="fas fa-crown"></i> Fashion Hub
+          </div>
+          <p style="color: #999; font-size: 0.875rem;">Your destination for premium fashion and style.</p>
+          <div class="social-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-phone"></i> 1-800-FASHION</li>
+            <li><i class="fas fa-envelope"></i> support@fashionhub.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Style Street, Fashion City, FC 12345</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fashion Hub. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  
+  <script>
+    let currentProduct = null;
+    let selectedSize = null;
+    let selectedColor = null;
+    let selectedQuantity = 1;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProductDetails();
+      setupTabButtons();
+    });
+
+    function loadProductDetails() {
+      const productId = getURLParameter('id');
+      if (!productId) {
+        window.location.href = 'products.html';
+        return;
+      }
+
+      currentProduct = getProductById(productId);
+      if (!currentProduct) {
+        window.location.href = 'products.html';
+        return;
+      }
+
+      renderProductDetails();
+      renderRelatedProducts();
+    }
+
+    function renderProductDetails() {
+      const inWishlist = isInWishlist(currentProduct.id);
+      
+      // Render gallery
+      const gallery = document.querySelector('#product-gallery');
+      gallery.innerHTML = `
+        <div class="product-main-image">
+          <img src="${currentProduct.image}" alt="${currentProduct.name}" id="main-image">
+        </div>
+      `;
+
+      // Render product info
+      const content = document.querySelector('#product-content');
+      content.innerHTML = `
+        <h1>${currentProduct.name}</h1>
+        
+        <div class="product-info-rating">
+          <div class="stars">${getStarRating(currentProduct.rating)}</div>
+          <span class="reviews-link">${currentProduct.reviews} Reviews</span>
+        </div>
+
+        <div class="product-info-price">
+          ${formatCurrency(currentProduct.price)}
+          ${currentProduct.oldPrice ? `<span class="old-price">${formatCurrency(currentProduct.oldPrice)}</span>` : ''}
+        </div>
+
+        <p class="product-info-description">${currentProduct.description}</p>
+
+        ${currentProduct.sizes && currentProduct.sizes.length > 0 ? `
+          <div class="selection-group">
+            <label>Size</label>
+            <div class="selection-options">
+              ${currentProduct.sizes.map(size => `
+                <button class="option-button" onclick="selectSize('${size}')">
+                  ${size}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        ${currentProduct.colors && currentProduct.colors.length > 0 ? `
+          <div class="selection-group">
+            <label>Color</label>
+            <div class="selection-options">
+              ${currentProduct.colors.map(color => `
+                <button class="option-button" onclick="selectColor('${color}')">
+                  ${color}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+
+        <div class="quantity-group">
+          <div class="quantity-input">
+            <button onclick="decreaseQty()">−</button>
+            <input type="number" value="1" id="quantity-input" min="1" onchange="updateQty()">
+            <button onclick="increaseQty()">+</button>
+          </div>
+        </div>
+
+        <div class="product-actions-group">
+          <button class="btn-add-to-cart-detail" onclick="addToCartDetail()">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
+          <button class="btn-add-to-wishlist-detail ${inWishlist ? 'active' : ''}" onclick="toggleWishlistDetail()">
+            <i class="fas fa-heart"></i> ${inWishlist ? 'In Wishlist' : 'Add to Wishlist'}
+          </button>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+          <p style="color: #666; font-size: 0.9rem;">
+            <i class="fas fa-check" style="color: #27ae60;"></i> In Stock
+          </p>
+          <p style="color: #666; font-size: 0.9rem;">
+            <i class="fas fa-shield-alt"></i> Authentic & Guaranteed
+          </p>
+        </div>
+      `;
+
+      // Update breadcrumb
+      document.querySelector('#breadcrumb-product').textContent = currentProduct.name;
+
+      // Update tab description
+      document.querySelector('#tab-description').textContent = currentProduct.description;
+    }
+
+    function renderRelatedProducts() {
+      const related = getAllProducts()
+        .filter(p => p.category === currentProduct.category && p.id !== currentProduct.id)
+        .slice(0, 4);
+
+      const container = document.querySelector('#related-products');
+      container.innerHTML = related.map(product => renderProductCard(product)).join('');
+      updateWishlistHearts();
+    }
+
+    function selectSize(size) {
+      selectedSize = size;
+      document.querySelectorAll('.selection-options button').forEach((btn, idx) => {
+        if (idx < currentProduct.sizes.length) {
+          btn.classList.remove('active');
+          if (btn.textContent.trim() === size) {
+            btn.classList.add('active');
+          }
+        }
+      });
+    }
+
+    function selectColor(color) {
+      selectedColor = color;
+      const buttons = document.querySelectorAll('.selection-options button');
+      let sizeButtonCount = currentProduct.sizes ? currentProduct.sizes.length : 0;
+      
+      buttons.forEach((btn, idx) => {
+        if (idx >= sizeButtonCount) {
+          btn.classList.remove('active');
+          if (btn.textContent.trim() === color) {
+            btn.classList.add('active');
+          }
+        }
+      });
+    }
+
+    function increaseQty() {
+      selectedQuantity++;
+      document.querySelector('#quantity-input').value = selectedQuantity;
+    }
+
+    function decreaseQty() {
+      if (selectedQuantity > 1) {
+        selectedQuantity--;
+        document.querySelector('#quantity-input').value = selectedQuantity;
+      }
+    }
+
+    function updateQty() {
+      selectedQuantity = parseInt(document.querySelector('#quantity-input').value) || 1;
+      if (selectedQuantity < 1) selectedQuantity = 1;
+      document.querySelector('#quantity-input').value = selectedQuantity;
+    }
+
+    function addToCartDetail() {
+      addToCart(currentProduct.id, selectedQuantity, selectedSize, selectedColor);
+      selectedQuantity = 1;
+      document.querySelector('#quantity-input').value = 1;
+    }
+
+    function toggleWishlistDetail() {
+      toggleWishlist(currentProduct.id);
+      const btn = document.querySelector('.btn-add-to-wishlist-detail');
+      if (isInWishlist(currentProduct.id)) {
+        btn.classList.add('active');
+        btn.innerHTML = '<i class="fas fa-heart"></i> In Wishlist';
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = '<i class="fas fa-heart"></i> Add to Wishlist';
+      }
+    }
+
+    function setupTabButtons() {
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          btn.classList.add('active');
+          const tabId = btn.getAttribute('data-tab');
+          document.querySelector(`#${tabId}`).classList.add('active');
+        });
+      });
+    }
+
+    // Make functions globally available
+    window.selectSize = selectSize;
+    window.selectColor = selectColor;
+    window.increaseQty = increaseQty;
+    window.decreaseQty = decreaseQty;
+    window.updateQty = updateQty;
+    window.addToCartDetail = addToCartDetail;
+    window.toggleWishlistDetail = toggleWishlistDetail;
+  </script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist - Fashion Hub</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-crown"></i> Fashion Hub
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Shop</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="products.html?category=men">Men</a></li>
+              <li><a class="dropdown-item" href="products.html?category=women">Women</a></li>
+              <li><a class="dropdown-item" href="products.html?category=kids">Kids</a></li>
+              <li><a class="dropdown-item" href="products.html?category=accessories">Accessories</a></li>
+              <li><a class="dropdown-item" href="products.html?category=footwear">Footwear</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+        
+        <form class="search-bar ms-3 me-3 search-form" style="display: flex; gap: 0.5rem;">
+          <input class="form-control" type="text" placeholder="Search products..." aria-label="Search" required>
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        
+        <div class="navbar-icons">
+          <div class="nav-icon wishlist-icon" title="Wishlist">
+            <i class="far fa-heart"></i>
+          </div>
+          <div class="nav-icon cart-icon" title="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge hidden">0</span>
+          </div>
+        </div>
+        
+        <button class="btn btn-login ms-2">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <div style="background-color: #f8f9fa; padding: 2rem 0; border-bottom: 1px solid #e0e0e0;">
+    <div class="container">
+      <h1 style="margin-bottom: 0.5rem;">My Wishlist</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Wishlist</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ========== WISHLIST SECTION ========== -->
+  <div class="container" style="padding: 3rem 0; min-height: calc(100vh - 400px);">
+    <div class="wishlist-section">
+      <div id="wishlist-content">
+        <!-- Wishlist items will be rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">
+            <i class="fas fa-crown"></i> Fashion Hub
+          </div>
+          <p style="color: #999; font-size: 0.875rem;">Your destination for premium fashion and style.</p>
+          <div class="social-icons">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Customer Service</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Information</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4>Contact Info</h4>
+          <ul>
+            <li><i class="fas fa-phone"></i> 1-800-FASHION</li>
+            <li><i class="fas fa-envelope"></i> support@fashionhub.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Style Street, Fashion City, FC 12345</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fashion Hub. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWishlist();
+    });
+
+    function renderWishlist() {
+      const wishlist = getWishlist();
+      const container = document.querySelector('#wishlist-content');
+
+      if (wishlist.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state-icon">
+              <i class="far fa-heart"></i>
+            </div>
+            <h3>Your Wishlist is Empty</h3>
+            <p>Start adding your favorite items to your wishlist.</p>
+            <a href="products.html" class="btn btn-primary mt-3">Start Shopping</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div class="wishlist-grid">
+          ${wishlist.map(item => renderWishlistItem(item)).join('')}
+        </div>
+      `;
+
+      setupWishlistEventListeners();
+      updateWishlistHearts();
+    }
+
+    function renderWishlistItem(item) {
+      const product = getProductById(item.id);
+      if (!product) return '';
+
+      return `
+        <div class="product-card">
+          <div class="product-image">
+            <img src="${item.image}" alt="${item.name}">
+            ${product.discount ? `<div class="product-discount">${product.discount}%</div>` : ''}
+            <div class="product-wishlist active" data-product-id="${item.id}">
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+          <div class="product-content">
+            <div class="product-category">${item.category}</div>
+            <h3 class="product-name">${item.name}</h3>
+            <div class="product-rating">
+              <div class="stars">${getStarRating(product.rating)}</div>
+              <div class="reviews">${product.reviews} reviews</div>
+            </div>
+            <div class="product-price">
+              <span class="current">${formatCurrency(item.price)}</span>
+            </div>
+            <div class="product-actions">
+              <button class="btn-add-cart" onclick="addToCartFromWishlist(${item.id})">
+                <i class="fas fa-shopping-cart"></i> Add to Cart
+              </button>
+              <button class="btn-details" onclick="viewProductDetails(${item.id})">
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function addToCartFromWishlist(productId) {
+      addToCart(productId, 1);
+      renderWishlist();
+      showToast('success', 'Added to Cart', 'Item moved to cart');
+    }
+
+    function setupWishlistEventListeners() {
+      document.querySelectorAll('.product-wishlist').forEach(heart => {
+        heart.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const productId = parseInt(heart.getAttribute('data-product-id'));
+          removeFromWishlist(productId);
+          renderWishlist();
+          showToast('success', 'Removed', 'Item removed from wishlist');
+        });
+      });
+    }
+
+    // Make functions globally available
+    window.addToCartFromWishlist = addToCartFromWishlist;
+  </script>
+</body>
+</html>
